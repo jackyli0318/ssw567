@@ -24,6 +24,7 @@ class Triangle:
         result = ''
         if(a+b<=c or a+c<=b or b+c<=a):
             answer = "Sorry! It's not a triangle!"
+            result = 'n'
         if(a==b and a==c):
             answer = "It's a equilateral triangle!"
             result = 'e'
