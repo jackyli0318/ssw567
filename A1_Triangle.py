@@ -3,7 +3,7 @@
 Triangle Classification
 Created on Fri Jan 20 22:04:37 2017
 
-@author: Zhi Li, Yu Zhang
+@author: Zhi Li, Yu Zhang, Maryam
 """
 
 '''As the square root of a number is always a unlimited dicimal,
@@ -53,18 +53,37 @@ class Triangle:
 
 
 class test_Triangle(unittest.TestCase):
-    def test_1(self):
-        self.test1 = Triangle()
+    
+    def test(self, name, result, a, b, c):
+        print('{}:'.format(name))
+        self.tri = Triangle()
         try:
-            self.assertEqual(self.test1.classify_triangle(1, 1, 1.5), 'e')
+            self.assertEqual(self.tri.classify_triangle(a, b, c), result)
+            print('{} passed.'.format(name))
         except AssertionError:
-            print('There is something wrong here.')
+            print('{} Failed.'.format(name))
+        
+    
+    
+        
 
 
             
 #three sides named a, b, c
-    
 test = test_Triangle()
-test.test_1()
+#Test Cases
+name = 'Test1'
+test.test(name, 'e', 1, 1, 1)
 
+name = 'Test2'
+test.test(name, 'i', 1, 1, 1.5)
+
+name = 'Test3'
+test.test(name, 'ir', 1, 1, 2**0.5)
+
+name = 'Test4'
+test.test(name, 'sr', 3, 4, 5)
+
+name = 'Test5'
+test.test(name, 's', 3, 4, 6)
 
